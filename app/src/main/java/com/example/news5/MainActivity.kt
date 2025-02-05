@@ -6,8 +6,19 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.news5.databinding.ActivityMainBinding
+import com.example.todolist.DataClass
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
+
+    var databaseReference: DatabaseReference? = null
+    var eventListener: ValueEventListener? = null
+    private lateinit var dataList: ArrayList<DataClass>
+    private lateinit var adapter: MyAdapter
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NEWS REPOTER"
-        android:textColor="#86A7F6"
+        android:textColor="@color/material_dynamic_neutral30"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

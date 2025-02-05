@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.News5" parent="Base.Theme.News5" />
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>
