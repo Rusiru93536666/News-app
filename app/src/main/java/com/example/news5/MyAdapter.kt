@@ -23,6 +23,16 @@ class MyAdapter (private val context: Context, private var dataList: List<DataCl
         holder.recTitle.text = dataList[position].dataTitle
         holder.recDesc.text = dataList[position].dataDesc
         holder.recPriority.text = dataList[position].dataPriority
+
+        holder.recCard.setOnClickListener {
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("Image", dataList[holder.adapterPosition].dataImage)
+            intent.putExtra("Description", dataList[holder.adapterPosition].dataDesc)
+            intent.putExtra("Title", dataList[holder.adapterPosition].dataTitle)
+            intent.putExtra("Priority", dataList[holder.adapterPosition].dataPriority)
+            context.startActivity(intent)
+        }
+
     }
 
     override fun getItemCount(): Int {
