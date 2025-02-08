@@ -70,10 +70,10 @@
             <Button
                 android:id="@+id/saveButton"
                 android:layout_width="match_parent"
+                android:backgroundTint="@color/black"
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:text="Publish"
-                android:background="@drawable/lavender_border"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
 

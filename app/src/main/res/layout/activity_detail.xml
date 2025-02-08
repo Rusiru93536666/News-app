@@ -15,7 +15,7 @@
         android:layout_marginTop="14dp"
         android:textSize="24sp"
         android:layout_gravity="center"
-        android:textColor="@color/lavender"
+        android:textColor="@color/black"
         android:layout_marginBottom="12dp"/>
 
     <ImageView
@@ -35,7 +35,7 @@
         android:text="Reporter name"
         android:layout_gravity="center"
         android:id="@+id/detailPriority"
-        android:textColor="@color/lavender"
+        android:textColor="@color/black"
         android:textSize="18sp"/>
 
     <TextView
@@ -46,7 +46,7 @@
         android:text="Description"
         android:layout_gravity="center"
         android:id="@+id/detailDesc"
-        android:textColor="@color/lavender"
+        android:textColor="@color/black"
         android:textSize="18sp"/>
 
 </LinearLayout>
