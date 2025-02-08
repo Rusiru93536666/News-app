@@ -39,10 +39,9 @@ class HomeActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = gridLayoutManager
 
         val builder = AlertDialog.Builder(this@HomeActivity)
-        builder.setCancelable(false)
-        builder.setView(R.layout.progress_layout)
+
         val dialog = builder.create()
-        dialog.show()
+
 
         dataList = ArrayList()
         adapter = MyAdapter(this@HomeActivity, dataList)

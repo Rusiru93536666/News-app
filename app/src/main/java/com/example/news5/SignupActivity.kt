@@ -1,5 +1,6 @@
 package com.example.news5
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -35,6 +36,8 @@ class SignupActivity : AppCompatActivity() {
                     if(it.isSuccessful){
                         auth.signOut()
                         Toast.makeText(this, "Account create success!" , Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, SigninActivity::class.java)
+                        startActivity(intent)
                     }
                     else{
                         Log.e("error: ",it.exception.toString())

@@ -34,8 +34,7 @@ class SigninActivity : AppCompatActivity() {
                 if(chechAllField()){
                     auth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
                         if (it.isSuccessful){
-                            Toast.makeText(this,"successfully Sign in", Toast.LENGTH_SHORT).show()
-
+//                            successfully signin
                             val intent = Intent(this, HomeActivity::class.java)
                             startActivity(intent)
                             finish()
@@ -45,6 +44,10 @@ class SigninActivity : AppCompatActivity() {
                         }
                     }
                 }
+        }
+        binding.signupbtn1.setOnClickListener{
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
         }
     }
 

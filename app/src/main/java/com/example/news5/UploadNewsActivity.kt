@@ -64,7 +64,6 @@ class UploadNewsActivity : AppCompatActivity() {
 
         val builder = AlertDialog.Builder(this@UploadNewsActivity)
         builder.setCancelable(false)
-        builder.setView(R.layout.progress_layout)
         val dialog = builder.create()
         dialog.show()
 
@@ -99,8 +98,11 @@ class UploadNewsActivity : AppCompatActivity() {
         FirebaseDatabase.getInstance().getReference("Todo List").child(currentDate)
             .setValue(dataClass).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this@UploadNewsActivity, "Saved", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@UploadNewsActivity, "Published", Toast.LENGTH_SHORT).show()
                     finish()
+
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
                 }
             }.addOnFailureListener { e ->
                 Toast.makeText(
