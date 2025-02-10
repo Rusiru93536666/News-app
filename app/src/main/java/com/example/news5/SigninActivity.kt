@@ -3,6 +3,7 @@ package com.example.news5
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -73,4 +74,13 @@ class SigninActivity : AppCompatActivity() {
         }
         return true
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.action_back) {
+            onBackPressed() // Navigate back
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }

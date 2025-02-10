@@ -1,4 +1,5 @@
-package com.example.todolist
+package com.example.news5
+
 
 class DataClass {
     var dataTitle: String? = null
@@ -12,6 +13,7 @@ class DataClass {
         this.dataPriority = dataPriority
         this.dataImage = dataImage
     }
-    constructor()
-    {}
+    constructor(){
+
+    }
 }

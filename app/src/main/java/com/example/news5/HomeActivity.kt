@@ -12,7 +12,6 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.news5.databinding.ActivityHomeBinding
 import com.example.news5.databinding.ActivityMainBinding
-import com.example.todolist.DataClass
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.*
 import java.util.*

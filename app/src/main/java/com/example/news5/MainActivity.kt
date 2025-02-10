@@ -7,7 +7,6 @@ import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.news5.databinding.ActivityMainBinding
-import com.example.todolist.DataClass
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 

@@ -1,86 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/white"
     tools:context=".UploadNewsActivity">
 
-    <androidx.cardview.widget.CardView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="20dp">
+        android:layout_height="50dp"
+        android:background="@color/black"
+        app:titleMarginStart="30dp"
+        app:title="Reporter"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@drawable/baseline_arrow_back_24" />
 
-        <LinearLayout
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/card_border"
-            android:padding="20dp">
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="20dp">
 
-            <ImageView
-                android:id="@+id/uploadImage"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="60dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/uploadimg" />
-
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/uploadTitle"
-                android:background="@drawable/black_border"
-                android:layout_marginTop="20dp"
-                android:padding="16dp"
-                android:maxLines="1"
-                android:hint="Enter Headline"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/lavender"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/card_border"
+                android:padding="20dp">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:id="@+id/uploadDesc"
-                android:background="@drawable/black_border"
-                android:layout_marginTop="20dp"
-                android:padding="16dp"
-                android:hint="Enter task description"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/lavender"/>
+                <ImageView
+                    android:id="@+id/uploadImage"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/uploadimg" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/uploadPriority"
-                android:background="@drawable/black_border"
-                android:layout_marginTop="20dp"
-                android:padding="16dp"
-                android:hint="Enter Reporter name"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/lavender"/>
+                <EditText
+                    android:id="@+id/uploadTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/black_border"
+                    android:layout_marginTop="20dp"
+                    android:padding="16dp"
+                    android:maxLines="1"
+                    android:hint="Enter Headline"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/black"/>
 
-            <Button
-                android:id="@+id/saveButton"
-                android:layout_width="match_parent"
-                android:backgroundTint="@color/black"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:text="Publish"
-                android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                <EditText
+                    android:id="@+id/uploadPriority"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/black_border"
+                    android:layout_marginTop="20dp"
+                    android:padding="16dp"
+                    android:hint="Enter Date"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/black"/>
 
+                <EditText
+                    android:id="@+id/uploadDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/black_border"
+                    android:layout_marginTop="20dp"
+                    android:padding="16dp"
+                    android:hint="Enter task description"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/black"/>
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:text="Publish"
+                    android:textSize="18sp"
+                    app:cornerRadius="20dp" />
 
-    </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
-</ScrollView>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+</LinearLayout>

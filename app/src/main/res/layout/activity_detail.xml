@@ -8,48 +8,71 @@
     android:orientation="vertical"
     tools:context=".DetailActivity">
 
-    <TextView
-        android:id="@+id/detailTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="12dp"
-        android:text="Title"
-        android:textColor="@color/black"
-        android:textSize="24sp" />
-
-    <ImageView
-        android:id="@+id/detailImage"
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:padding="8dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/uploadimg" />
-
-    <TextView
-        android:id="@+id/detailPriority"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:padding="20dp"
-        android:background="@drawable/black_border"
-        android:text="Reporter name"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:layout_height="50dp"
+        android:background="@color/black"
+        app:titleMarginStart="30dp"
+        app:title="Reporter"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@drawable/baseline_arrow_back_24" />
 
-    <TextView
-        android:id="@+id/detailDesc"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/black_border"
-        android:padding="20dp"
-        android:text="Description"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/detailImage"
+                android:layout_width="292dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/uploadimg" />
+
+            <TextView
+                android:id="@+id/detailPriority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:padding="20dp"
+                android:background="@drawable/black_border"
+                android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:padding="20dp"
+                android:text="Title"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detailDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:padding="20dp"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

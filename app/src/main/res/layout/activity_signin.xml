@@ -37,6 +37,18 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword"
         app:layout_constraintVertical_bias="0.485" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/toolbar"
+        android:background="@color/black"
+        app:titleMarginStart="30dp"
+        app:title="naa"
+        tools:ignore="MissingConstraints"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvLogin2"
         android:layout_width="wrap_content"
