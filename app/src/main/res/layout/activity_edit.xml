@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".UploadNewsActivity">
+    tools:context=".EditActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -82,12 +82,21 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/saveButton"
+                android:id="@+id/EditButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/black"
                 android:text="Publish"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+            <Button
+                android:id="@+id/deleteBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/red"
+                android:text="Delete"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
 

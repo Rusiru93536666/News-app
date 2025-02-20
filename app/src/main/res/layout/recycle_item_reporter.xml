@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/recCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginStart="12dp"
     android:layout_marginEnd="12dp"
     android:layout_marginHorizontal="10dp"
@@ -13,7 +13,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="310dp"
         android:background="@drawable/card_border">
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -35,7 +35,6 @@
             android:layout_below="@+id/recImage"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginStart="3dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
@@ -46,10 +45,33 @@
             android:textStyle="bold"
             android:textSize="20sp" />
 
+        <!-- Edit Button -->
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recTitle"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/black"
+            android:text="Edit"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
 
-
-
-
+        <!-- Delete Button -->
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recTitle"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Delete"
+            android:textSize="14sp"
+            android:backgroundTint="@color/red"
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 

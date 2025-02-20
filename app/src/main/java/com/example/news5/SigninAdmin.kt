@@ -4,25 +4,23 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.news5.databinding.ActivitySigninAdminBinding
 import com.example.news5.databinding.ActivitySigninBinding
-import com.example.news5.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class SigninActivity : AppCompatActivity() {
-
+class SigninAdmin : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
-    private lateinit var binding : ActivitySigninBinding
+    private lateinit var binding : ActivitySigninAdminBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySigninBinding.inflate(layoutInflater)
+        binding = ActivitySigninAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.hide()
@@ -31,24 +29,21 @@ class SigninActivity : AppCompatActivity() {
         binding.signinbtn.setOnClickListener{
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
-                if(chechAllField()){
-                    auth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
-                        if (it.isSuccessful){
+            if(chechAllField()){
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
+                    if (it.isSuccessful){
 //                            successfully signin
-                            val intent = Intent(this, HomeActivity::class.java)
-                            startActivity(intent)
-                            finish()
-                        }
-                        else{
-                            binding.textInputLayoutEmail.error = "Login failed"
-                        }
+                        val intent = Intent(this, HomeAdmin::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                    else{
+                        binding.textInputLayoutEmail.error = "Login failed"
                     }
                 }
+            }
         }
-        binding.signupbtn1.setOnClickListener{
-            val intent = Intent(this, SignupActivity::class.java)
-            startActivity(intent)
-        }
+
     }
 
     private fun chechAllField(): Boolean{

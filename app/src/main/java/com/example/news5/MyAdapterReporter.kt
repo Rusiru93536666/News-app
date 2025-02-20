@@ -10,24 +10,23 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.firebase.database.FirebaseDatabase
 
 
-class MyAdapter (private val context: Context, private var dataList: List<DataClass>) : RecyclerView.Adapter<MyViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+class MyAdapterReporter (private val context: Context, private var dataList: List<DataClass>) : RecyclerView.Adapter<MyViewHolderReporter>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolderReporter {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.recycler_item, parent, false)
-        return MyViewHolder(view)
+        return MyViewHolderReporter(view)
     }
 
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolderReporter, position: Int) {
         Glide.with(context).load(dataList[position].dataImage).into(holder.recImage)
         holder.recTitle.text = dataList[position].dataTitle
 //        holder.recDesc.text = dataList[position].dataDesc
 //        holder.recPriority.text = dataList[position].dataPriority
 
         holder.recCard.setOnClickListener {
-            val intent = Intent(context, DetailActivity::class.java)
+            val intent = Intent(context, EditActivity::class.java)
             intent.putExtra("Image", dataList[holder.adapterPosition].dataImage)
             intent.putExtra("Description", dataList[holder.adapterPosition].dataDesc)
             intent.putExtra("Title", dataList[holder.adapterPosition].dataTitle)
@@ -42,14 +41,14 @@ class MyAdapter (private val context: Context, private var dataList: List<DataCl
 
     }
 
-    fun searchDataList(searchList: List<DataClass>){
+    fun searchDataListReporter(searchList: List<DataClass>){
         dataList = searchList
         notifyDataSetChanged()
     }
 
 }
 
-class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class MyViewHolderReporter(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var recImage: ImageView
     var recTitle: TextView
 //    var recDesc: TextView
@@ -63,20 +62,3 @@ class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         recCard = itemView.findViewById(R.id.recCard)
     }
 }
-
-
-
-//binding.deleteBtn.setOnClickListener{
-//
-//    val database = FirebaseDatabase.getInstance()
-//    val reference = database.getReference("Todo List").child("Feb 11, 2025 12:40:53 PM")
-//
-//// Remove individual fields
-//    reference.child("dataTitle").removeValue()
-//    reference.child("dataDesc").removeValue()
-//    reference.child("dataPriority").removeValue()
-//
-//    reference.removeValue()
-//
-//
-//}

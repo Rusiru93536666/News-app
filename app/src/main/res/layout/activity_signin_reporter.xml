@@ -9,46 +9,32 @@
     tools:context=".SigninActivity">
 
 
-
-
-    <Button
-        android:id="@+id/signupbtn1"
-        android:layout_width="189dp"
-        android:layout_height="36dp"
-        android:backgroundTint="@color/black"
-        android:text="Create an account"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/signinbtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword" />
-
     <Button
         android:id="@+id/signinbtn"
         android:layout_width="326dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="100dp"
         android:backgroundTint="@color/white"
-        android:text="Signin as Viwer"
+        android:text="Signin as Reporter"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupbtn1" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail"
+        app:layout_constraintVertical_bias="0.423" />
 
     <TextView
         android:id="@+id/tvLogin2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="348dp"
+        android:layout_height="81dp"
         android:layout_marginTop="400dp"
-        android:text="Nice To See You !"
-        android:textStyle="bold"
+        android:text="Signin before publish news"
         android:textColor="@color/white"
         android:textSize="32sp"
+        android:gravity="center"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,8 +45,8 @@
         android:layout_margin="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
         android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLogin2"
         app:startIconDrawable="@drawable/ic_email"
         tools:ignore="UnknownId">
@@ -80,7 +66,7 @@
         android:id="@+id/textInputLayoutPassword"
         android:layout_width="337dp"
         android:layout_height="55dp"
-        android:layout_marginTop="20dp"
+        android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,8 +79,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
-            android:textColor="@color/white"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:hint="Password"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>

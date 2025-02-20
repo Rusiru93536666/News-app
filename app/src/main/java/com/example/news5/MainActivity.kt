@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, SigninActivity::class.java)
+            val intent = Intent(this, SelectUser::class.java)
             startActivity(intent)
             finish()
         }, 3000)

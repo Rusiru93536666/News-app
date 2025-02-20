@@ -3,45 +3,46 @@ package com.example.news5
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.widget.Button
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.news5.databinding.ActivityHomeBinding
-import com.example.news5.databinding.ActivityMainBinding
+import com.example.news5.HomeActivity
+import com.example.news5.HomeAdmin
+import com.example.news5.databinding.ActivityHomeAdminBinding
+import com.example.news5.databinding.ActivityHomeReporterBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.*
-import java.util.*
-import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
+import com.google.firebase.database.ValueEventListener
+import java.util.Locale
 
-
-class HomeActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityHomeBinding
+class HomeReporter : AppCompatActivity() {
+    private lateinit var binding: ActivityHomeReporterBinding
     var databaseReference: DatabaseReference? = null
     var eventListener: ValueEventListener? = null
-    private lateinit var dataList: ArrayList<DataClass>
+    private lateinit var dataList: java.util.ArrayList<DataClass>
     private lateinit var adapter: MyAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding  =  ActivityHomeBinding.inflate(layoutInflater)
+        binding  =  ActivityHomeReporterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
 
-        val gridLayoutManager = GridLayoutManager(this@HomeActivity,1)
+
+        val gridLayoutManager = GridLayoutManager(this@HomeReporter,1)
         binding.recyclerView.layoutManager = gridLayoutManager
-        val builder = AlertDialog.Builder(this@HomeActivity)
+        val builder = AlertDialog.Builder(this@HomeReporter)
         val dialog = builder.create()
 
         dataList = ArrayList()
-        adapter = MyAdapter(this@HomeActivity, dataList)
+        adapter = MyAdapter(this@HomeReporter, dataList)
         binding.recyclerView.adapter = adapter
         databaseReference = FirebaseDatabase.getInstance().getReference("Todo List")
         dialog.show()
@@ -70,10 +71,11 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-        binding.userbtn.setOnClickListener{
-            val intent = Intent(this, HomeActivity::class.java)
+        binding.reportbtn.setOnClickListener{
+            val intent = Intent(this, UploadNewsActivity::class.java)
             startActivity(intent)
         }
+
 
 
 
@@ -103,6 +105,4 @@ class HomeActivity : AppCompatActivity() {
         }
         adapter.searchDataList(searchList)
     }
-
 }
-

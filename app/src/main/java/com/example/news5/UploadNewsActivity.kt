@@ -82,10 +82,13 @@ class UploadNewsActivity : AppCompatActivity() {
         binding.saveButton.setOnClickListener {
             saveData()
         }
+        // Toolbar back button
+        binding.toolbar.setOnClickListener {
+            finish()
+        }
     }
 
     private fun saveData() {
-
 
         val storageReference = FirebaseStorage.getInstance().reference.child("Task Images")
             .child(uri!!.lastPathSegment!!)
@@ -105,78 +108,7 @@ class UploadNewsActivity : AppCompatActivity() {
             dialog.dismiss()
         }
 
-
-
-
-
-
-
-
-
-
-//        if (uri == null) {
-//            Toast.makeText(this, "Please select an image first", Toast.LENGTH_SHORT).show()
-//            return
-//        }
-//
-//        val storageReference = FirebaseStorage.getInstance().reference.child("News Images")
-//        imageUrls.clear()
-//        val builder = AlertDialog.Builder(this)
-//        builder.setCancelable(false)
-//        val dialog = builder.create()
-//        dialog.show()
-//
-//        var uploadCount = 0
-//        for (uri in uriList) {
-//            val fileRef = storageReference.child(uri.lastPathSegment!!)
-//            fileRef.putFile(uri).addOnSuccessListener { taskSnapshot ->
-//                taskSnapshot.storage.downloadUrl.addOnSuccessListener { url ->
-//                    imageUrls.add(url.toString())
-//                    uploadCount++
-//
-//                    if (uploadCount == uriList.size) {
-//                        uploadData()
-//                        dialog.dismiss()
-//                    }
-//                }
-//            }.addOnFailureListener {
-//                dialog.dismiss()
-//                Toast.makeText(this, "Upload failed", Toast.LENGTH_SHORT).show()
-//            }
-//        }
     }
-
-//    private fun uploadData() {
-//        val title = binding.uploadTitle.text.toString()
-//        val desc = binding.uploadDesc.text.toString()
-//        val priority = binding.uploadPriority.text.toString()
-//
-//        if (title.isEmpty() || desc.isEmpty() || priority.isEmpty()) {
-//            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
-//            return
-//        }
-//
-//        val currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().time)
-//        val data = mapOf(
-//            "title" to title,
-//            "desc" to desc,
-//            "priority" to priority,
-//            "images" to imageUrls
-//        )
-//
-//        FirebaseDatabase.getInstance().getReference("News").child(currentDate)
-//            .setValue(data)
-//            .addOnCompleteListener { task ->
-//                if (task.isSuccessful) {
-//                    Toast.makeText(this, "Published", Toast.LENGTH_SHORT).show()
-//                    finish()
-//                    startActivity(Intent(this, HomeActivity::class.java))
-//                }
-//            }
-//            .addOnFailureListener { e ->
-//                Toast.makeText(this, e.message.toString(), Toast.LENGTH_SHORT).show()
-//            }
-//    }
 
 
 

@@ -35,19 +35,19 @@
                     android:layout_height="112dp"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:text="From Local to Global – Get the News That Shapes Your World!"
+                    android:text="Breaking News Starts with You "
                     android:textColor="@android:color/white"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/userbtn"
+                    android:id="@+id/reportbtn"
                     android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="0dp"
                     android:backgroundTint="#7FD5041A"
                     android:gravity="center"
-                    android:text="Join"
+                    android:text="Publish"
                     android:textSize="15sp"
                     app:cornerRadius="20dp" />
             </LinearLayout>
